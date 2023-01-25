@@ -139,7 +139,7 @@ public class FileReaderTest {
 	}
 
 	@Test
-	void readInputArrayLineFollowedByResultLine_Diff_Type_Input_Output() throws IOException {
+	void readInputArrayLineFollowedByResultLine_Different_Type_Input_Output() throws IOException {
 
 		List<Entry<int[], Character[]>> testCases = FileReader.readInputArrayLineFollowedByResultLine(BASE_PATH,
 				INPUT_ARRAY_LINES_FOLLOWED_BY_RESULT_ARRAY_DIFF_TYPE_INPUT_OUTPUT, int[].class, Character.class);
