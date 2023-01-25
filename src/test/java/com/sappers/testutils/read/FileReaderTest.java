@@ -1,16 +1,15 @@
 package com.sappers.testutils.read;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 
 import org.junit.jupiter.api.Test;
 
 import com.sappers.testutils.exception.IncompatibleFileContentsException;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FileReaderTest {
 
@@ -117,10 +116,8 @@ public class FileReaderTest {
 	@Test
 	void readInputArrayLineFollowedByResultLine_Empty_File() throws IOException {
 
-		assertThrows(IncompatibleFileContentsException.class, () -> {
-			FileReader.readInputArrayLineFollowedByResultLine(BASE_PATH,
-					INPUT_ARRAY_LINES_FOLLOWED_BY_RESULT_ARRAY_EMPTY_FILE, int[].class, Integer.class);
-		});
+		assertEquals(new ArrayList<>(), FileReader.readInputArrayLineFollowedByResultLine(BASE_PATH,
+					INPUT_ARRAY_LINES_FOLLOWED_BY_RESULT_ARRAY_EMPTY_FILE, int[].class, Integer.class));
 	}
 
 	@Test
